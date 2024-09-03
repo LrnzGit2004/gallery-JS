@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery-bw</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="assets/back-icon.png" class="back-btn" id="backBtn" onClick=slideAvant() />
+
+        <div class="slider">
+            <div>
+                <img  src="assets/image1.jpg">
+                <img  src="assets/image2.jpg">
+                <img  src="assets/image3.jpg">
+            </div>
+            <div>
+                <img src="assets/image4.jpg">
+                <img src="assets/image5.jpg">
+                <img src="assets/image6.jpg">
+            </div>
+            <div>
+                <img src="assets/image7.jpg">
+                <img src="assets/image8.jpg">
+                <img src="assets/image9.jpg"> 
+            </div>   
+        </div>
+
+        <img src="assets/next-icon.png" class="next-btn" id="nextBtn" onClick=slideArriere() />
+    </div>
+      
+
+      
+    
+
+      
+        
+        
+    </div>
+
+    <script>
+
+        let scrollContainer = document.querySelector(".slider")
+        let backBtn = document.getElementById("backBtn")
+        let nextBtn = document.getElementById("nextBtn")
+
+        
+        scrollContainer.addEventListener("wheel", (event) => {
+            eventpreventDefault();
+            scrollContainer.scrollLeft += event.deltaY    
+        })
+
+        nextBtn.addEventListener("click", () => {
+            scrollContainer.scrollLeft += 760
+        })
+        backBtn.addEventListener("click", () => {
+            scrollContainer.scrollLeft -= 790
+        })
+    </script>
+</body>
+</html>
